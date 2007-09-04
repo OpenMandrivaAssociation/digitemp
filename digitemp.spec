@@ -1,7 +1,7 @@
 Summary:	Digital thermometer using DS1820 1-wire sensors
 Name:		digitemp
 Version:	3.5.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL
 Group:		Monitoring
 URL:		http://www.digitemp.com/
