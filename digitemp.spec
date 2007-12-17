@@ -11,7 +11,6 @@ Source2:	DS9097_Schematic.gif
 Patch0:		%{name}-opt.patch
 BuildRequires:	libusb-devel
 #BuildRequires:	lockdev-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 DigiTemp is a simple to use interface to the Dallas Semiconductor DS18S20,
