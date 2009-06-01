@@ -1,14 +1,15 @@
 Summary:	Digital thermometer using DS1820 1-wire sensors
 Name:		digitemp
-Version:	3.5.0
-Release:	%mkrel 4
-License:	GPL
+Version:	3.6.0
+Release:	%mkrel 1
+License:	GPLv2+
 Group:		Monitoring
 URL:		http://www.digitemp.com/
-Source0:	http://www.digitemp.com/software/linux/%{name}-%{version}.tar.bz2
+Source0:	http://www.digitemp.com/software/linux/%{name}-%{version}.tar.gz
 Source1:	http://www.brianlane.com/linux/dthowto.txt
 Source2:	DS9097_Schematic.gif
 Patch0:		%{name}-opt.patch
+Patch1:		%{name}-str_fmt.patch
 BuildRequires:	libusb-devel
 #BuildRequires:	lockdev-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -25,6 +26,7 @@ signatures.
 
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 cp %{SOURCE1} %{SOURCE2} .
 
@@ -52,5 +54,3 @@ rm -rf %{buildroot}
 %doc CREDITS DS9097_S* FAQ README TODO dthowto.txt perl python rrdb
 %attr(0755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-
-
