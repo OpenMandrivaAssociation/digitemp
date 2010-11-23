@@ -1,7 +1,7 @@
 Summary:	Digital thermometer using DS1820 1-wire sensors
 Name:		digitemp
 Version:	3.6.0
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv2+
 Group:		Monitoring
 URL:		http://www.digitemp.com/
@@ -34,7 +34,11 @@ cp %{SOURCE1} %{SOURCE2} .
 export OPT="%{optflags}"
 
 %make ds9097
+
+%make clean
 %make ds9097u
+
+%make clean
 %make ds2490
 
 %install
@@ -43,8 +47,8 @@ rm -rf %{buildroot}
 install -d %{buildroot}%{_bindir}
 install -d %{buildroot}%{_mandir}/man1
 
-install digitemp_DS* %{buildroot}%{_bindir}/
-install %{name}.1 %{buildroot}%{_mandir}/man1/
+install -pm0755 digitemp_DS* %{buildroot}%{_bindir}/
+install -pm0644 %{name}.1 %{buildroot}%{_mandir}/man1/
 
 %clean
 rm -rf %{buildroot}
@@ -52,5 +56,5 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc CREDITS DS9097_S* FAQ README TODO dthowto.txt perl python rrdb
-%attr(0755,root,root) %{_bindir}/*
+%{_bindir}/*
 %{_mandir}/man1/*
