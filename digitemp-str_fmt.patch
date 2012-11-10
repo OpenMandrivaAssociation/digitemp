@@ -1,0 +1,23 @@
+--- digitemp-3.6.0/src/digitemp.c.orig	2009-03-03 11:55:20.000000000 +0200
++++ digitemp-3.6.0/src/digitemp.c	2009-03-03 11:56:23.000000000 +0200
+@@ -586,7 +586,7 @@
+       perror("Error loging to logfile");
+     close( fd );
+   } else {
+-    printf( line );
++    printf( "%s", line );
+   }
+   return 0;
+ }  
+--- digitemp-3.6.0/userial/ioutil.c.orig	2009-03-03 12:01:52.000000000 +0200
++++ digitemp-3.6.0/userial/ioutil.c	2009-03-03 12:02:38.000000000 +0200
+@@ -86,7 +86,7 @@
+    // remember the start length
+    deflen = strlen(buf);
+    if (deflen < 80)
+-      sprintf(defbuf,buf);
++      sprintf("%s",defbuf,buf);
+    else
+       defbuf[0] = 0;
+ 
+//empty line
