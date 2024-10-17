@@ -4,7 +4,7 @@ Version:	3.6.0
 Release:	4
 License:	GPLv2+
 Group:		Monitoring
-URL:		http://www.digitemp.com/
+URL:		https://www.digitemp.com/
 Source0:	http://www.digitemp.com/software/linux/%{name}-%{version}.tar.gz
 Source1:	http://www.brianlane.com/linux/dthowto.txt
 Source2:	DS9097_Schematic.gif
